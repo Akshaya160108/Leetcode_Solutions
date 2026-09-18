@@ -1,17 +1,8 @@
+def solve(n):
+    if n==0 or n==1:
+        return n
+    return solve(n-1)+solve(n-2)
 class Solution:
     def fib(self, n: int) -> int:
-        first=0
-        second=1
-        next=0
-        if n==0:
-            return 0
-        elif n==1:
-            return 1
-        else:
-            i=2
-            while i<=n:
-                next=first+second
-                first,second=second,next
-                i=i+1
-            return next
-        
+        ans=solve(n)
+        return ans
