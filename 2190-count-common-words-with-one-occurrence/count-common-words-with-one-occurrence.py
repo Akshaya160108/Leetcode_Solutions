@@ -5,7 +5,7 @@ class Solution:
             if words1.count(word)==1 and words2.count(word)==1:
                 count+=1
         return count'''
-        d1={}
+        '''d1={}
         for word in words1:
             if word in d1:
                 d1[word]+=1
@@ -22,4 +22,20 @@ class Solution:
             if word in words2:
                 if d1[word]==1 and d2[word]==1:
                     count+=1
+        return count'''
+        d={}
+        for word in words1:
+            if word in d:
+                d[word]+=1
+            else:
+                d[word]=1
+        for word in words2:
+            if word in d:
+                d[word]+=1
+            else:
+                d[word]=1
+        count=0
+        for k,v in d.items():
+            if v==2 and words1.count(k)==1 and words2.count(k)==1:
+                count+=1
         return count
